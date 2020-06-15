@@ -1,12 +1,101 @@
 import pygame, os, sys, random
 
+class Slug_Juice():
+	def __init__(self, pos):
+		self.rect = pygame.Rect(pos[0], pos[1], 50, 24)
+		self.img = pygame.image.load('slugged_floor.png')
+		self.lifetime = 0
+
 class Enemy():
-	def __init__(self, rect, damage = None):
+	def __init__(self, rect, filename, img_size, speed, health, damage = None, vel = [0,0]):
 		self.rect = pygame.Rect(rect)
-		if damage != None:
-			self.dmg = damage
+		self.health = health
+		self.dmg = damage if damage != None else 1 # if player collides with the enemy, they take slight damage (1 dmg), intended for ranged targets		
+		self.vel = [0,0]
+		self.abs_loc = 'air'
+		self.img = pygame.transform.scale(pygame.image.load(filename), (img_size))
+		self.orientation = 'R'
+		self.speed = speed
+		self.collided_floor = []
+	def physics(self, terrain_hitboxes):
+		self.collided_floor = []
+		# GRAVITY --------------------------------------
+		if self.abs_loc != 'ground':
+			self.vel[1] += 2
+
+		# COLLISION ----------------------------------
+		def find_collided_terrain(terrain_hitboxes): # function to return the specific terrain that the player collided with
+			collided_terrain = []
+			for terrain in terrain_hitboxes:
+				if self.rect.colliderect(terrain):
+					collided_terrain.append(terrain)
+			return collided_terrain
+
+		self.collisions = {'top':False, # reset the collisions
+						  'bottom':False,
+						  'left':False,
+						  'right':False, 
+						  'elevator':False}
+
+		self.rect.x += self.vel[0] # move the player on the x-axis
+
+		collided_terrain = find_collided_terrain(terrain_hitboxes) # pull the collided terrain
+	
+		for tile in collided_terrain:
+			if self.vel[0] > 0:
+				self.rect.right = tile.left
+				self.collisions['right'] = True
+			elif self.vel[0] < 0:
+				self.rect.left = tile.right
+				self.collisions['left'] = True
+
+		self.rect.y += self.vel[1] # move the player on the y-axis
+
+		collided_terrain = find_collided_terrain(terrain_hitboxes) # pull the collided terrain
+
+		for tile in collided_terrain:
+			if self.vel[1] > 0:
+				self.rect.bottom = tile.top
+				self.collisions['bottom'] = True
+				self.collided_floor.append(tile)
+				self.vel[1] = 0
+			elif self.vel[1] < 0:
+				self.rect.top = tile.bottom
+				self.collisions['top'] = True
+		
+		if self.collisions['bottom']:
+			self.abs_loc = 'ground'
 		else:
-			self.dmg = 1
+			self.abs_loc = 'air'
+
+		# ORIENTATION --------------------------------------------------
+		self.orientation = 'R' if self.vel[0] > 0 else 'L' if self.vel[0] < 0 else self.orientation
+
+	def orientatedImg(self):
+		if self.orientation == 'R':
+			return self.img
+		else:
+			return pygame.transform.flip(self.img, True, False)
+
+class Slug(Enemy):
+	def __init__(self, pos):
+		self.img_width, self.img_height = 31, 25
+		self.blit_width, self.blit_height = self.img_width * 3, self.img_height * 3
+		self.slugged_floors = []
+		super().__init__(health = 2, rect = (pos[0], pos[1], self.blit_width, self.blit_height), damage = 3, speed = 2, filename = 'slug.png', img_size = (31*3, 25*3))
+	def pathfind(self, player_rect, terrain_hitboxes):
+		slug_middle = int(self.rect.x + self.rect.width/2)
+		player_middle = int(player_rect.x + player_rect.width/2)
+		player_left = player_rect.left
+		player_right = player_rect.right
+		if player_right < slug_middle:
+			self.vel[0] = -self.speed
+		elif player_left > slug_middle:
+			self.vel[0] = self.speed
+		else:
+			self.vel[0] = 0
+		self.physics(terrain_hitboxes)
+
 class Particle():
 	def __init__(self, color, rect):
 		self.rect = pygame.Rect(rect)
@@ -14,6 +103,7 @@ class Particle():
 		self.color = color
 		self.lifetime = 0
 		self.vel = [0,1]
+		self.canDamage = True
 	def moveToAir(self, terrain_hitboxes):
 		# COLLISION ----------------------------------
 		def find_collided_terrain(terrain_hitboxes): # function to return the specific terrain that the player collided with
@@ -98,13 +188,16 @@ class Action():
 
 class Player():
 	def __init__(self):
-		self.rect = pygame.Rect(175,-20,30,36)
+		self.rect = pygame.Rect(175,-20,22*2,24*2)
 		self.vel = [0,0]
 		self.abs_loc = 'air'
 		self.max = {'air': [[-20,20],[-10,30]], 'ground': [[-10,10],[-10,30]]}
+		self.orientation = 'R'
 
+		self.idle_img = pygame.transform.scale(pygame.image.load('player.png'), (22*2, 24*2))
 		self.boost = Action()
 		self.boost.glyph = pygame.transform.scale(pygame.image.load('wind_glyph.png'), (30,30))
+		self.boost.img = pygame.transform.scale(pygame.image.load('player_boost.png'), (22*2, 24*2))
 		self.boost.ing = False
 		self.boost.charge = 100
 		self.boost.charge_rate = 4
@@ -117,34 +210,27 @@ class Player():
 		self.health.max = 10
 		self.health.now = 10
 		self.health.meter = Meter((60, 10), actual_meter_color = (217, 82, 82))
+
+	def orientatedImg(self, img):
+		if self.orientation == 'R':
+			return img
+		else:
+			return pygame.transform.flip(img, True, False)
 	def createBoostParticle(self, keys):
-		top = None
-		if 'w' in keys and len(keys) == 1:
-			top = self.rect.bottom
-			bottom = self.rect.bottom + 50
-			left = self.rect.left - 10
-			right = self.rect.right
-		if 'w' in keys and 'a' in keys and len(keys) == 2:
-			top = self.rect.bottom
-			bottom = self.rect.bottom + 50
-			left = self.rect.left - self.rect.width - 10
-			right = self.rect.left
-		if 'w' in keys and 'd' in keys and len(keys) == 2:
-			top = self.rect.bottom
-			bottom = self.rect.bottom + 50
-			left = self.rect.right - 10
-			right = self.rect.right + self.rect.width
+		top = self.rect.bottom
+		bottom = self.rect.bottom + 70
+		left = self.rect.left - 25
+		right = self.rect.right + 25
 		widthheight = random.randint(5,30)
 
-		if top != None:
-			self.boost.particles.append(Particle(random.choice(self.boost.particle_colors),
-					     						 (random.randint(left, right),
-												 random.randint(top, bottom),
-												 widthheight,
-												 widthheight)))
+		self.boost.particles.append(Particle(random.choice(self.boost.particle_colors),
+					     					(random.randint(left, right),
+											 random.randint(top, bottom),
+										     widthheight,
+											 widthheight)))
 
 	def physics(self, keys, terrain_hitboxes):
-		if self.boost.ing and len(self.boost.particles) < 40:
+		if self.boost.ing and len(self.boost.particles) < 80:
 			self.createBoostParticle(keys)
 		for particle in self.boost.particles:
 			particle.moveToAir(terrain_hitboxes)
@@ -230,6 +316,8 @@ class Player():
 		else:
 			self.abs_loc = 'air'
 
+		# ORIENTATION --------------------------------------------------
+		self.orientation = 'R' if self.vel[0] > 0 else 'L' if self.vel[0] < 0 else self.orientation
 class Game():
 	def __init__(self, size = (1000,1000),
 					   title = 'Unnamed Platformer',
@@ -248,9 +336,12 @@ class Game():
 		self.keys = []
 		self.true_scroll = [0,0]
 		self.scroll = [0,0]
+		self.enemies = []
+		self.enemies.append(Slug((random.randint(0,1000), 0)))
 	def mainloop(self):
-		print(f'Health Bar Width: ({self.player.health.meter.meter.width}) because {self.player.health.now} * 20 is {self.player.health.meter.meter.width}')
-	
+		# print(f'Health Bar Width: ({self.player.health.meter.meter.width}) because {self.player.health.now} * 20 is {self.player.health.meter.meter.width}')
+		if len(self.enemies) == 0:
+			self.enemies.append(Slug((random.randint(0,1000), 0)))
 		for event in pygame.event.get(): # event loop
 			if event.type == pygame.QUIT:
 				pygame.quit()
@@ -284,6 +375,9 @@ class Game():
 		pygame.time.delay(self.tick)
 
 	def blit(self):
+		def death_plain_check(y):
+			return True if y >= 1500 else False
+
 		# BG ---------------------------------------------------------
 		self.win.actual.blit(self.win.bg, (0,0))
 
@@ -304,19 +398,59 @@ class Game():
 				x += 1 # increase x and y each row/column
 			y += 1
 
+		# ENEMIES -----------------------------------------------------
+		for enemy in self.enemies:
+			if enemy.health <= 0 or death_plain_check(enemy.rect.y):
+				self.enemies.remove(enemy)
+			else:
+				enemy.pathfind(self.player.rect, self.win.terrain_collision_rects)
+				self.win.actual.blit(enemy.orientatedImg(), (enemy.rect.x - self.scroll[0], enemy.rect.y - self.scroll[1]))
+
+			# SLUGGED FLOOR LOGIC
+			if type(enemy) == Slug:
+				# ADD NEW SLUGGED FLOOR BASED ON WHERE THE SLUG WALKED, DON'T ADD IF FLOOR ALREADY IN LIST
+				for tile in enemy.collided_floor:
+					already_a_slugged_floor_there = False
+					for slugged_floor in enemy.slugged_floors:
+						if tile.x == slugged_floor.rect.x:
+							already_a_slugged_floor_there = True
+					if not already_a_slugged_floor_there:
+						enemy.slugged_floors.append(Slug_Juice((tile.x, tile.y)))
+
+				
+				for slugged_floor in enemy.slugged_floors:
+					# INCREASE SLUGGED FLOOR LIFETIME, KILL IF NECESSARY
+					slugged_floor.lifetime += 1
+					if slugged_floor.lifetime > 80:
+						print('dead')
+						print(len(enemy.slugged_floors))
+						enemy.slugged_floors.remove(slugged_floor)
+						print(len(enemy.slugged_floors))
+
+					# BLIT SLUGGED FLOORS
+					self.win.actual.blit(slugged_floor.img, (slugged_floor.rect.x - self.scroll[0], slugged_floor.rect.y - self.scroll[1]))
+
 		# PLAYER -------------------------------------------------------
 		self.player.physics(self.keys, self.win.terrain_collision_rects)
-		pygame.draw.rect(self.win.actual, # draw location
-						 (0,0,255), # color (blue)
-						 (self.player.rect.x - self.scroll[0], # rect, x
-						  self.player.rect.y - self.scroll[1], # y
-						  self.player.rect.width, # width
-						  self.player.rect.height)) # height
+		if self.player.boost.ing:
+			self.win.actual.blit(self.player.orientatedImg(self.player.boost.img), (self.player.rect.x - self.scroll[0], self.player.rect.y - self.scroll[1]))
+		else:
+			self.win.actual.blit(self.player.orientatedImg(self.player.idle_img), (self.player.rect.x - self.scroll[0], self.player.rect.y - self.scroll[1]))
+		# pygame.draw.rect(self.win.actual, # draw location
+		# 				 (0,0,255), # color (blue)
+		# 				 (self.player.rect.x - self.scroll[0], # rect, x
+		# 				  self.player.rect.y - self.scroll[1], # y
+		# 				  self.player.rect.width, # width
+		# 				  self.player.rect.height)) # height
 
 		# BOOST PARTICLES ----------------------------------------------
 		for particle in self.player.boost.particles:
 			pygame.draw.ellipse(self.win.actual, particle.color, (particle.rect.x - self.scroll[0], particle.rect.y - self.scroll[1], particle.rect.width, particle.rect.height))
-
+			if particle.canDamage:
+				for enemy in self.enemies:
+					if particle.rect.colliderect(enemy):
+						enemy.health -= 1
+						particle.canDamage = False
 		# STATUS BAR
 		self.win.actual.blit(self.status_bar.img, (0,0))
 
