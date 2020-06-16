@@ -1,0 +1,808 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"en",
+				"enemies"
+			],
+			[
+				"ene",
+				"enemies"
+			],
+			[
+				"de",
+				"death_plain_check"
+			],
+			[
+				"enem",
+				"enemies"
+			],
+			[
+				"slu",
+				"slug_middle"
+			],
+			[
+				"pl",
+				"player_middle"
+			],
+			[
+				"sl",
+				"slug_middle"
+			],
+			[
+				"al",
+				"already_a_slugged_floor_there"
+			],
+			[
+				"slo",
+				"slugged_floors"
+			],
+			[
+				"slugg",
+				"slugged_floor"
+			],
+			[
+				"Sl",
+				"Slug_Juice"
+			],
+			[
+				"su",
+				"slugged_floors"
+			],
+			[
+				"slug",
+				"slugged_floor"
+			],
+			[
+				"col",
+				"collided_floor"
+			],
+			[
+				"blit",
+				"blit_width"
+			],
+			[
+				"bl",
+				"blit_height"
+			],
+			[
+				"bli",
+				"blit_width"
+			],
+			[
+				"img",
+				"img_height"
+			],
+			[
+				"or",
+				"orientatedImg"
+			],
+			[
+				"tre",
+				"terrain_hitboxes"
+			],
+			[
+				"terrain",
+				"terrain_collision_rects"
+			],
+			[
+				"ac",
+				"actual_meter_color"
+			],
+			[
+				"nor",
+				"normal_color"
+			],
+			[
+				"S",
+				"StatusBar"
+			],
+			[
+				"ter",
+				"terrain_hitboxes"
+			],
+			[
+				"move",
+				"moveToAir"
+			],
+			[
+				"par",
+				"particle"
+			],
+			[
+				"pa",
+				"particle"
+			],
+			[
+				"width",
+				"widthheight"
+			],
+			[
+				"boo",
+				"boost"
+			],
+			[
+				"ch",
+				"charge_rate"
+			],
+			[
+				"met",
+				"meter_color"
+			],
+			[
+				"flashing",
+				"flashing_timer"
+			],
+			[
+				"fla",
+				"flashing_color"
+			],
+			[
+				"no",
+				"normal_color"
+			],
+			[
+				"thr",
+				"threshold_reached"
+			],
+			[
+				"fa",
+				"flashing_color"
+			],
+			[
+				"lo",
+				"lowerHigher"
+			],
+			[
+				"meter",
+				"meterPos"
+			],
+			[
+				"coll",
+				"colliding_rects"
+			],
+			[
+				"co",
+				"colliding_rects"
+			],
+			[
+				"action",
+				"action_time"
+			],
+			[
+				"im",
+				"image_folder"
+			],
+			[
+				"ol",
+				"old_word_list"
+			],
+			[
+				"new",
+				"new_path"
+			],
+			[
+				"for",
+				"formatted_file_extension"
+			],
+			[
+				"fiel",
+				"file_extension"
+			],
+			[
+				"fi",
+				"file_extension"
+			],
+			[
+				"fil",
+				"file_extension"
+			],
+			[
+				"file",
+				"file_name"
+			],
+			[
+				"run",
+				"runs_list"
+			],
+			[
+				"la",
+				"lap_times"
+			],
+			[
+				"rn",
+				"run_info"
+			],
+			[
+				"wi",
+				"withOptions"
+			],
+			[
+				"wit",
+				"withoutOptions"
+			],
+			[
+				"l",
+				"lap_times"
+			],
+			[
+				"load",
+				"load_runs"
+			],
+			[
+				"di",
+				"distance"
+			],
+			[
+				"dis",
+				"distances"
+			],
+			[
+				"av",
+				"avg_time"
+			],
+			[
+				"lap",
+				"lap_times"
+			],
+			[
+				"in",
+				"input_lap_time"
+			],
+			[
+				"opt",
+				"options_printed"
+			],
+			[
+				"op",
+				"options_printed"
+			],
+			[
+				"as",
+				"ask_for_cmd"
+			],
+			[
+				"json",
+				"json_content"
+			],
+			[
+				"loa",
+				"loadImages"
+			],
+			[
+				"d",
+				"destination"
+			],
+			[
+				"sc",
+				"scroll"
+			],
+			[
+				"le",
+				"levitating"
+			],
+			[
+				"e",
+				"elevator"
+			],
+			[
+				"el",
+				"elevator"
+			],
+			[
+				"sp",
+				"special_collisions"
+			],
+			[
+				"ai",
+				"alien"
+			],
+			[
+				"alien",
+				"alien_tmp"
+			],
+			[
+				"pallet",
+				"pallete_tmp"
+			],
+			[
+				"groun",
+				"grounded_check"
+			],
+			[
+				"bo",
+				"boosting"
+			],
+			[
+				"m",
+				"movement"
+			],
+			[
+				"ca",
+				"charged"
+			],
+			[
+				"ti",
+				"tick_count"
+			],
+			[
+				"win",
+				"win_width"
+			],
+			[
+				"max",
+				"maxStrength"
+			],
+			[
+				"re",
+				"returnable"
+			],
+			[
+				"tel",
+				"teleport_start"
+			],
+			[
+				"te",
+				"teleport_img"
+			],
+			[
+				"boos",
+				"boost_movement"
+			],
+			[
+				"s",
+				"self"
+			],
+			[
+				"ma",
+				"maxStrength"
+			],
+			[
+				"b",
+				"baseStrength"
+			],
+			[
+				"gra",
+				"grav_use"
+			],
+			[
+				"mvoe",
+				"movement"
+			],
+			[
+				"player_",
+				"player_rect"
+			],
+			[
+				"j",
+				"jVelList"
+			],
+			[
+				"hi",
+				"hitYDif"
+			],
+			[
+				"hit",
+				"hitXDif"
+			],
+			[
+				"ju",
+				"jump_multipler"
+			],
+			[
+				"fallin",
+				"falling_vel_index"
+			],
+			[
+				"fall",
+				"falling_vel_index"
+			],
+			[
+				"fal",
+				"fall_vel_stage"
+			],
+			[
+				"jump",
+				"jump_return"
+			],
+			[
+				"key",
+				"key_press"
+			],
+			[
+				"ke",
+				"key_press"
+			],
+			[
+				"sa",
+				"safe_spawn_y"
+			],
+			[
+				"cone",
+				"convert_alpha"
+			],
+			[
+				"set",
+				"set_colorkey"
+			],
+			[
+				"c",
+				"cycle_right"
+			],
+			[
+				"ge",
+				"generateBlitCommands"
+			],
+			[
+				"moving",
+				"movingLeft"
+			],
+			[
+				"mo",
+				"movingRight"
+			],
+			[
+				"mov",
+				"movingLeft"
+			],
+			[
+				"cu",
+				"column_index"
+			],
+			[
+				"row",
+				"row_index"
+			],
+			[
+				"right",
+				"rightPress"
+			],
+			[
+				"y",
+				"yVel"
+			],
+			[
+				"x",
+				"xVel"
+			],
+			[
+				"cyl",
+				"cycle_right"
+			],
+			[
+				"wind",
+				"window_height"
+			],
+			[
+				"C",
+				"Color_Wall"
+			],
+			[
+				"colo",
+				"color_choices"
+			],
+			[
+				"ran",
+				"randint"
+			],
+			[
+				"dra",
+				"draw"
+			],
+			[
+				"gam",
+				"game_height"
+			],
+			[
+				"n",
+				"note_vel"
+			],
+			[
+				"act",
+				"action_sent"
+			],
+			[
+				"wo",
+				"wood_sword"
+			],
+			[
+				"app",
+				"append"
+			],
+			[
+				"W",
+				"w_just_pushed"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/isaac/Desktop/take_flight/pygame_from_template.py",
+		"/C/Users/isaac/Desktop/take_flight/pygame_template.py",
+		"/C/Users/isaac/Desktop/take_flight/take_flight/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Desktop/take_flight/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Desktop/take flight/clean/pygame_from_template.py",
+		"/C/Users/isaac/Desktop/take flight/clean/pygame_template.py",
+		"/C/Users/isaac/Desktop/take flight/clean/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Desktop/take flight/pygame_template.py",
+		"/C/Users/isaac/Desktop/take flight/master/take_flight/pygame_template.py",
+		"/C/Users/isaac/Desktop/take flight/master/take_flight/pygame_from_template.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/platformer/ver 2/cool_game.py",
+		"/C/Users/isaac/Desktop/take flight/pygame_from_template.py",
+		"/C/Users/isaac/Desktop/take flight/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Desktop/New folder/pygame_template.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/rename.py",
+		"/C/Users/isaac/Desktop/runs.json",
+		"/C/Users/isaac/Desktop/runs.txt",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/throwaway.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/track.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/platformer/ver 2/explore.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/platformer/player.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/platformer/game.py",
+		"/C/Users/isaac/Downloads/Platformer/ver 2/thief.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/platformer/camera.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/platformer/classes.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/platformer/game_copy.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/thief/game.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/rythmn/game.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/rpg/rpg.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/test.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/colors.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/rpg.py",
+		"/C/Users/isaac/Documents/Python Projects/ultimate snake game/colors.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/requestsThrowaway.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/soupRequests.py",
+		"/C/Users/isaac/Documents/Python Projects/throwaway/iteratingOneLine.py",
+		"/C/Users/isaac/Documents/Python Projects/first_django_cover/first_django/snake/urls.py",
+		"/C/Users/isaac/Documents/Python Projects/first_django_cover/first_django/first_django/urls.py",
+		"/C/Users/isaac/Documents/Python Projects/first_django_cover/first_django/snake_game/views.py",
+		"/C/Users/isaac/Documents/Python Projects/first_django_cover/first_django/snake_game/urls.py",
+		"/C/Users/isaac/Documents/Python Projects/first_django_cover/first_django/snake/views.py",
+		"/C/Users/isaac/Documents/Python Projects/first_django_cover/first_django/blog/views.py",
+		"/C/Users/isaac/Documents/Python Projects/first_django_cover/first_django/blog/urls.py",
+		"/C/Users/isaac/Documents/Python Projects/transcript maker/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python Projects/tweet finder/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python Projects/memes/monsters inc earrape/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Desktop/desktop python 4-27-20/my_first_django/ultimate_snake_game/urls.py",
+		"/C/Users/isaac/Documents/Python Projects/my_first_django/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python Projects/coronavirus/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Desktop/desktop python 4-27-20/my_first_django/ultimate_snake_game/views.py",
+		"/C/Users/isaac/Desktop/desktop python 4-27-20/my_first_django/my_first_django/urls.py",
+		"/C/Users/isaac/Desktop/desktop python 4-27-20/ssss.py",
+		"/C/Users/isaac/Desktop/coronavirus/monitor.py",
+		"/C/Users/isaac/Desktop/desktop python 4-27-20/probability.py",
+		"/C/Users/isaac/Desktop/desktop python 4-27-20/earrape.py",
+		"/C/Users/isaac/Desktop/country_coronavirus/append.py",
+		"/C/Users/isaac/Desktop/country_coronavirus/update_check.py",
+		"/C/Users/isaac/Desktop/country_coronavirus/update_check.pyw",
+		"/C/Users/isaac/Desktop/country_coronavirus/monitor.py",
+		"/C/Users/isaac/Desktop/coronavirus/main.pyw",
+		"/C/Users/isaac/Desktop/coronavirus/vaccine.py",
+		"/C/Users/isaac/Desktop/coronavirus/vaccine.pyw",
+		"/C/Users/isaac/Documents/Python/coronavirus/soupRequests.py",
+		"/C/Users/isaac/Documents/Python/coronavirus/recall/main.py",
+		"/C/Users/isaac/Documents/Python/coronavirus/recall/append.py",
+		"/C/Users/isaac/Documents/Python/coronavirus/recall/monitor.py",
+		"/C/Users/isaac/Documents/Python/coronavirus/recall/main.pyw",
+		"/C/Users/isaac/Documents/Python/coronavirus/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python/coronavirus/.git/MERGE_MSG",
+		"/C/Users/isaac/Documents/Python/coronavirus/master/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python/coronavirus/master/.git/MERGE_MSG",
+		"/C/Users/isaac/Documents/Python/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python/coronavirus/recall/coronavirus_complete.py",
+		"/C/Users/isaac/Desktop/quickUnreadable.py",
+		"/C/Users/isaac/Documents/Python/starter projects/.git/MERGE_MSG",
+		"/C/Users/isaac/Desktop/json_viewer.py",
+		"/C/Users/isaac/Documents/Python/ultimate_snake_game/shop.py",
+		"/C/Users/isaac/Documents/Python/thief/colors.py",
+		"/C/Users/isaac/Documents/Python/thief/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python/colors.py",
+		"/C/Users/isaac/Documents/Python/snake.py",
+		"/C/Users/isaac/Documents/Python/maze_game.py",
+		"/C/Users/isaac/Documents/Python/starter projects/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python/superheros/heroSearch.py",
+		"/C/Users/isaac/Documents/Python/superheros/pull.py",
+		"/C/Users/isaac/Documents/Python/.gitignore",
+		"/C/Users/isaac/Documents/Python/sketch_spotify/spotify.py",
+		"/C/Users/isaac/Documents/Python/sketch_spotify/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python/superheros/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python/superheros/main.py",
+		"/C/Users/isaac/Documents/Python/pyFormat/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Documents/Python/pyFormat/pathFormat.py",
+		"/C/Users/isaac/Documents/Python/pyFormat/README.md",
+		"/C/Users/isaac/Documents/Python/pathFormatter/pathFormat.py",
+		"/C/Users/isaac/Documents/Python/pathFormatter/.git/COMMIT_EDITMSG",
+		"/C/Users/isaac/Desktop/flashcards/new_flashcards/new_flashcards.py",
+		"/C/Users/isaac/Desktop/throwaway.py",
+		"/C/Users/isaac/Desktop/locator.py",
+		"/C/Users/isaac/Documents/Archived Jan. 5 2020/desktop documents/Python Files/Python Projects/Projects/ela/quotecreator.py",
+		"/C/Users/isaac/Desktop/youtube.py",
+		"/C/Users/isaac/Desktop/coronavirus.py",
+		"/C/Users/isaac/Desktop/spotify - Copy.pyw",
+		"/C/Users/isaac/Desktop/python starter projects/pyxl.py",
+		"/C/Users/isaac/Documents/Archived Jan. 5 2020/desktop documents/Python Files/Python Projects/Small Learning Projects/tkinter/tinkering.py",
+		"/C/Users/isaac/Desktop/sudoku.py",
+		"/C/Users/isaac/Desktop/araque_bot.py",
+		"/C/Users/isaac/Desktop/hide/new_throwaway.py",
+		"/C/Users/isaac/Desktop/waste.py",
+		"/C/Users/isaac/Desktop/bored_bot.py",
+		"/C/Users/isaac/Desktop/helper - Copy.py",
+		"/C/Users/isaac/Desktop/helper.py",
+		"/C/Users/isaac/Desktop/python starter projects/youtube.py",
+		"/C/Users/isaac/Desktop/python starter projects/audioDownload.py",
+		"/C/Users/isaac/Desktop/audioDownload.py",
+		"/C/Users/isaac/Desktop/python starter projects/musicPlayer.py",
+		"/C/Users/isaac/Desktop/new_throwaway.py",
+		"/C/Users/isaac/Desktop/araque_quiz_helper.py",
+		"/C/Users/isaac/Desktop/downloader.py",
+		"/C/Users/isaac/Desktop/translate/spanish_translator.py",
+		"/C/Users/isaac/Documents/Archived Jan. 5 2020/desktop documents/Python Files/Python Projects/Projects/Python Games/Snake Game/Snake Game.py",
+		"/C/Users/isaac/Documents/Archived Jan. 5 2020/desktop documents/Python Files/Python Projects/Projects/economywithexcel/scraper.py",
+		"/C/Users/isaac/Desktop/python starter projects/soupRequests.py",
+		"/C/Users/isaac/Desktop/twitter_bot.py",
+		"/C/Users/isaac/Documents/Archived Jan. 5 2020/desktop documents/Python Files/Python Projects/Small Learning Projects/pyautoguistuff/house_on_cliff.py",
+		"/C/Users/isaac/Documents/Archived Jan. 5 2020/desktop documents/Python Files/Python Projects/Small Learning Projects/pyautoguistuff/mousePointSelect.py",
+		"/C/Users/isaac/Documents/Archived Jan. 5 2020/desktop documents/Python Files/Python Projects/Projects/economywithexcel/spanish_translator.py",
+		"/C/Users/isaac/Desktop/almanac files/almanac.py",
+		"/C/Users/isaac/Desktop/almanac files/clean_almanac.py"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "pygame_template.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\isaac\\Documents\\Python Projects\\throwaway\\colors.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
